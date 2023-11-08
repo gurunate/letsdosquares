@@ -1,4 +1,16 @@
 {
-  "name": "letsdosquares",
-  "packageManager": "yarn@4.0.1"
+    "name": "letsdosquares",
+    "description": "Let's Do Squares game",
+    "packageManager": "yarn@4.0.1",
+    "private": true,
+    "license": "UNLICENSED",
+    "workspaces": [
+        "core",
+        "data-graph",
+        "design",
+        "docs",
+        "game",
+        "themes",
+        "ui-kit"
+    ]
 }
