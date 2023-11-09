@@ -6,7 +6,7 @@ import { isEmpty } from 'lodash';
 // import styles from './styles.module.scss';
 
 export type HeadingProps = {
-    number?: string;
+    number?: string | number;
 };
 
 /**
@@ -17,23 +17,13 @@ export type HeadingProps = {
 const Heading: React.FC<HeadingProps> = (props: HeadingProps): JSX.Element => {
     const { number } = props;
     return (
-        <TableCell
-            align="center"
-            // className={styles.cell}
-        >
+        <TableCell align="center">
             {isEmpty(number) && (
                 <Tooltip title="Revealed later" arrow>
                     <HelpCenterOutlinedIcon />
                 </Tooltip>
             )}
-            {!isEmpty(number) && (
-                <Typography
-                    variant="h5"
-                    // className={styles.heading}
-                >
-                    {number}
-                </Typography>
-            )}
+            {!isEmpty(number) && <Typography variant="h5">{number}</Typography>}
         </TableCell>
     );
 };

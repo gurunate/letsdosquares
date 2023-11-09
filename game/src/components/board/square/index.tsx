@@ -10,7 +10,7 @@ import type { Square as TSquare } from '@/types/square';
 
 export type SquareProps = TSquare & {
     disabled?: boolean;
-    highlight: boolean;
+    highlight?: boolean;
     onClick: (selected: TSquare) => void;
     picked?: string;
     selected?: boolean;
@@ -52,7 +52,7 @@ const stringAvatar = (val: string) => ({
 const Square: React.FC<SquareProps> = ({
     column,
     disabled = false,
-    highlight,
+    highlight = false,
     onClick,
     picked,
     row,
@@ -61,7 +61,12 @@ const Square: React.FC<SquareProps> = ({
 }: SquareProps): JSX.Element => (
     <TableCell align="center">
         {picked && (
-            <Box display="flex" justifyContent="center" alignItems="center">
+            <Box
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                sx={{ cursor: 'pointer' }}
+            >
                 <Tooltip title={picked} arrow>
                     <Avatar {...stringAvatar(picked)} variant="rounded" />
                 </Tooltip>

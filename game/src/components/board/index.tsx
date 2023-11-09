@@ -20,7 +20,7 @@ export type BoardProps = unknown;
 
 const WIDTH = 10;
 
-const picked = {
+const picked: Record<string, string> = {
     '0,2': 'Nate Johnson',
     '3,8': 'Nate Johnson',
     '1,2': 'Annabelle Johnson',
@@ -35,7 +35,7 @@ const picked = {
  * @returns {JSX.Element}
  */
 const Board: React.FC<BoardProps> = (props: BoardProps): JSX.Element => {
-    const [selected, setSelected] = React.useState({});
+    const [selected, setSelected] = React.useState<Record<string, boolean>>({});
 
     const handlePick = ({ column, row }: TSquare) => {
         setSelected({
@@ -52,20 +52,14 @@ const Board: React.FC<BoardProps> = (props: BoardProps): JSX.Element => {
         <Grid container>
             <Grid item xs={1} />
             <Grid item xs={11}>
-                <Box
-                // className={styles.teamA}
-                >
+                <Box>
                     <Typography variant="h4" align="center" p={2}>
                         {homeTeam}
                     </Typography>
                 </Box>
             </Grid>
             <Grid item xs={1}>
-                <Box
-                    display="flex"
-                    // className={styles.teamB}
-                    sx={{ height: '830px' }}
-                >
+                <Box display="flex" sx={{ height: '830px' }}>
                     <Typography variant="h4" align="center" p={2}>
                         {awayTeam}
                     </Typography>
@@ -75,23 +69,16 @@ const Board: React.FC<BoardProps> = (props: BoardProps): JSX.Element => {
                 <Table size="small">
                     <TableHead>
                         <TableRow>
-                            <TableCell
-                            // className={styles.cell}
-                            />
-                            {Array.from(Array(WIDTH)).map((_, index) => (
-                                <Heading
-                                    key={index}
-                                    // number={index}
-                                />
+                            <TableCell />
+                            {Array.from(Array(WIDTH)).map((_, idx) => (
+                                <Heading key={idx} number={idx} />
                             ))}
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {Array.from(Array(WIDTH)).map((_, row) => (
                             <TableRow key={row}>
-                                <Heading
-                                // number={row}
-                                />
+                                <Heading number={row} />
                                 {Array.from(Array(WIDTH)).map((_, col) => {
                                     const spot = `${col}x${row}`;
                                     const disabled =

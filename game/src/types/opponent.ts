@@ -1,6 +1,6 @@
 export interface Opponent {
-    OpponentID: number;
-    Name: string;
-    Team: string;
-    Sport: string;
+    id?: number;
+    name: string;
+    team?: string;
+    sport?: string;
 }

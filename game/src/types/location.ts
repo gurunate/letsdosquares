@@ -1,7 +1,7 @@
 export interface Location {
-    LocationID: number;
-    Name: string;
-    City: string;
-    StateProvince: string;
-    Country: string;
+    id: number;
+    name: string;
+    city: string;
+    stateProvince: string;
+    country: string;
 }

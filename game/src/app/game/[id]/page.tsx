@@ -2,6 +2,8 @@ import { Box, Grid, Paper } from '@mui/material';
 
 import Board from '@/components/board';
 import React from 'react';
+import { Square as TSquare } from '@/types/square';
+import Winners from '@/components/board/winners';
 
 const LIMIT = 5;
 const PRICE = 3;
@@ -9,28 +11,29 @@ const TEAM_A = 'Tampa Bay';
 const TEAM_B = 'KC';
 
 export default function Page() {
-    const handleClick = square => {
+    const handleClick = (square: TSquare) => {
         console.log({ square });
     };
 
     return (
         <Grid container spacing={4}>
             <Grid item lg={8}>
-                <Box mb={2}>
-                    <Board
-                    // onClick={handleClick}
-                    // limit={LIMIT}
-                    // teamA={TEAM_A}
-                    // teamB={TEAM_B}
-                    />
-                </Box>
-                <Grid container spacing={4}>
-                    <Grid item lg={6} />
-                    <Grid item lg={6}>
-                        Winners
-                        {/* <Winners teamA={TEAM_A} teamB={TEAM_B} /> */}
-                    </Grid>
-                </Grid>
+                <Board
+                // onClick={handleClick}
+                // limit={LIMIT}
+                // teamA={TEAM_A}
+                // teamB={TEAM_B}
+                />
+            </Grid>
+            <Grid item lg={6}>
+                <Winners
+                    homeTeam={{ name: TEAM_A }}
+                    awayTeam={{ name: TEAM_B }}
+                    id={0}
+                    date={undefined}
+                    sport={''}
+                    location={undefined}
+                />
             </Grid>
             <Grid item lg={4}>
                 <Box m={4}>
