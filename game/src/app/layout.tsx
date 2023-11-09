@@ -10,9 +10,9 @@ import {
 } from '@mui/material';
 
 import { Inter } from 'next/font/google';
-import Link from 'next/link';
 import MenuIcon from '@mui/icons-material/Menu';
 import type { Metadata } from 'next';
+import NextLink from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -33,7 +33,11 @@ export default function RootLayout({
                 <AppBar position="fixed" sx={{ zIndex: 2000 }}>
                     <Toolbar>
                         <Stack direction="row" spacing={2} alignItems="center">
-                            <IconButton href="/" component={Link}>
+                            <IconButton
+                                href="/"
+                                component={NextLink}
+                                sx={{ color: 'inherit' }}
+                            >
                                 <MenuIcon />
                             </IconButton>
                             Let&apos;s Do Squares
@@ -42,7 +46,9 @@ export default function RootLayout({
                 </AppBar>
                 <Toolbar />
                 <Container maxWidth="xl">
-                    <Box p={2}>{children}</Box>
+                    <Box p={2}>
+                        <main>{children}</main>
+                    </Box>
                 </Container>
             </body>
         </html>

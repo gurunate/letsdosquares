@@ -1,19 +1,18 @@
-import { Avatar, Box, TableCell, Tooltip } from '@mui/material';
+import { Avatar, Box, IconButton, TableCell, Tooltip } from '@mui/material';
 
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import DoDisturbOnIcon from '@mui/icons-material/DoDisturbOn';
+import type { Square as TSquare } from '@/types/square';
 
 // import classNames from 'classnames';
 // import styles from './styles.module.scss';
 
-export type SquareProps = {
-    column: string;
+export type SquareProps = TSquare & {
     disabled?: boolean;
     highlight: boolean;
-    onClick: () => void;
-    picked?: boolean;
-    row: string;
+    onClick: (selected: TSquare) => void;
+    picked?: string;
     selected?: boolean;
     trace?: boolean;
 };
@@ -22,7 +21,6 @@ function stringToColor(val: string) {
     let hash = 0;
     let i;
 
-    /* eslint-disable no-bitwise */
     for (i = 0; i < val.length; i += 1) {
         hash = val.charCodeAt(i) + ((hash << 5) - hash);
     }
@@ -33,7 +31,6 @@ function stringToColor(val: string) {
         const value = (hash >> (i * 8)) & 0xff;
         color += `00${value.toString(16)}`.substr(-2);
     }
-    /* eslint-enable no-bitwise */
 
     return color;
 }
@@ -63,11 +60,12 @@ const Square: React.FC<SquareProps> = (props: SquareProps): JSX.Element => {
         onClick,
         picked,
         row,
-        selected,
+        selected = false,
         trace
     } = props;
 
-    const handleClick = () => {
+    const handleClick = ({ column, row }: TSquare) => {
+        console.log('handleClick', { column, row });
         onClick({ column, row });
     };
 
@@ -113,17 +111,14 @@ const Square: React.FC<SquareProps> = (props: SquareProps): JSX.Element => {
                     //     [styles.trace]: trace,
                     //     [styles.highlight]: highlight
                     // })}
-                    onClick={handleClick}
                 >
-                    <Box
-                        alignItems="center"
-                        display="flex"
-                        height="100%"
-                        justifyContent="center"
+                    <IconButton
+                        onClick={() => handleClick({ column, row })}
+                        color={selected ? 'success' : 'default'}
                     >
                         {selected && <CheckCircleIcon />}
                         {!selected && <AddCircleIcon />}
-                    </Box>
+                    </IconButton>
                 </TableCell>
             )}
         </>

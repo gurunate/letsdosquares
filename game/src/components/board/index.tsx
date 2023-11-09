@@ -14,6 +14,7 @@ import {
 import Heading from './heading';
 import React from 'react';
 import Square from './square';
+import { Square as TSquare } from '@/types/square';
 
 export type BoardProps = unknown;
 
@@ -36,7 +37,7 @@ const picked = {
 const Board: React.FC<BoardProps> = (props: BoardProps): JSX.Element => {
     const [selected, setSelected] = React.useState({});
 
-    const handlePick = ({ column, row }) => {
+    const handlePick = ({ column, row }: TSquare) => {
         setSelected({
             ...selected,
             [`${column},${row}`]: !selected[`${column},${row}`]
@@ -44,8 +45,8 @@ const Board: React.FC<BoardProps> = (props: BoardProps): JSX.Element => {
     };
 
     const limit = 5;
-    const teamA = 'teamA';
-    const teamB = 'teamB';
+    const homeTeam = 'teamA';
+    const awayTeam = 'teamB';
 
     return (
         <Grid container>
@@ -55,7 +56,7 @@ const Board: React.FC<BoardProps> = (props: BoardProps): JSX.Element => {
                 // className={styles.teamA}
                 >
                     <Typography variant="h4" align="center" p={2}>
-                        {teamA}
+                        {homeTeam}
                     </Typography>
                 </Box>
             </Grid>
@@ -66,7 +67,7 @@ const Board: React.FC<BoardProps> = (props: BoardProps): JSX.Element => {
                     sx={{ height: '830px' }}
                 >
                     <Typography variant="h4" align="center" p={2}>
-                        {teamB}
+                        {awayTeam}
                     </Typography>
                 </Box>
             </Grid>
