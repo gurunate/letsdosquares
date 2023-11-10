@@ -28,7 +28,7 @@ const Winner: React.FC<WinnerProps> = ({
                     <TableCell />
                     <TableCell align="center">{homeTeam?.name}</TableCell>
                     <TableCell align="center">{awayTeam?.name}</TableCell>
-                    <TableCell align="center">Owner</TableCell>
+                    <TableCell align="center">Winner</TableCell>
                     <TableCell align="right">Payout</TableCell>
                 </TableRow>
             </TableHead>

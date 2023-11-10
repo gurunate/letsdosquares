@@ -26,7 +26,7 @@ const InstructionsAndRules: React.FC<InstructionsAndRulesProps> = ({
     const awayTeamScore = 3;
 
     return (
-        <Grid container spacing={2} component={Paper}>
+        <Grid container spacing={2}>
             <Grid item xs={12}>
                 <Typography paragraph variant="h3">
                     Instructions and Rules
@@ -66,8 +66,6 @@ const InstructionsAndRules: React.FC<InstructionsAndRulesProps> = ({
                     <em>{homeTeam.name}</em> number of {getTenth(homeTeamScore)}
                     .
                 </Typography>
-            </Grid>
-            <Grid item xs={12} p={2}>
                 <Typography paragraph variant="h4">
                     Payouts
                 </Typography>

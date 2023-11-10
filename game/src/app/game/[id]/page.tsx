@@ -19,13 +19,18 @@ export default function Page() {
     const sportingEvent = fixtures.sportingEvent();
 
     return (
-        <Grid container spacing={4}>
-            <Grid item lg={8}>
-                <Board
-                    {...sportingEvent}
-                    // onClick={handleClick}
-                    limit={LIMIT}
-                />
+        <Grid container spacing={8}>
+            <Grid item lg={8} container direction="column" spacing={8}>
+                <Grid item>
+                    <Board
+                        {...sportingEvent}
+                        // onClick={handleClick}
+                        limit={LIMIT}
+                    />
+                </Grid>
+                <Grid item>
+                    <Winners {...sportingEvent} />
+                </Grid>
             </Grid>
             <Grid item lg={4}>
                 <InstructionsAndRules
@@ -33,9 +38,6 @@ export default function Page() {
                     limit={LIMIT}
                     price={PRICE}
                 />
-            </Grid>
-            <Grid item lg={6}>
-                <Winners {...sportingEvent} />
             </Grid>
         </Grid>
     );
