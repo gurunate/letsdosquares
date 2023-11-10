@@ -1,5 +1,5 @@
 export interface Opponent {
-    id?: number;
+    id?: string;
     name: string;
     team?: string;
     sport?: string;

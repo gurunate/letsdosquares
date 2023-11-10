@@ -1,7 +1,7 @@
 import { SportingEvent } from './sporting-event';
 
 export interface Game {
-    id: number;
+    id: string;
     title: string;
     sportingEvent: SportingEvent;
 }

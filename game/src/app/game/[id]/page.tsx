@@ -2,7 +2,7 @@ import { Box, Grid, Paper } from '@mui/material';
 
 import Board from '@/components/board';
 import React from 'react';
-import { Square as TSquare } from '@/types/square';
+import { Square as TSquare } from '@letsdosquares/core/square';
 import Winners from '@/components/board/winners';
 
 const LIMIT = 5;
