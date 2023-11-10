@@ -10,13 +10,19 @@ import {
     TableRow,
     Typography
 } from '@mui/material';
+import {
+    SportingEvent as TSportingEvent,
+    Square as TSquare
+} from '@letsdosquares/core/types';
 
 import Heading from './heading';
 import React from 'react';
 import Square from './square';
-import { Square as TSquare } from '@/types/square';
+import styles from './styles.module.scss';
 
-export type BoardProps = unknown;
+export type BoardProps = TSportingEvent & {
+    limit?: number;
+};
 
 const WIDTH = 10;
 
@@ -34,7 +40,11 @@ const picked: Record<string, string> = {
  * @param {BoardProps} props
  * @returns {JSX.Element}
  */
-const Board: React.FC<BoardProps> = (props: BoardProps): JSX.Element => {
+const Board: React.FC<BoardProps> = ({
+    limit = 5,
+    homeTeam,
+    awayTeam
+}: BoardProps): JSX.Element => {
     const [selected, setSelected] = React.useState<Record<string, boolean>>({});
 
     const handlePick = ({ column, row }: TSquare) => {
@@ -44,26 +54,18 @@ const Board: React.FC<BoardProps> = (props: BoardProps): JSX.Element => {
         });
     };
 
-    const limit = 5;
-    const homeTeam = 'teamA';
-    const awayTeam = 'teamB';
-
     return (
         <Grid container>
             <Grid item xs={1} />
             <Grid item xs={11}>
-                <Box>
-                    <Typography variant="h4" align="center" p={2}>
-                        {homeTeam}
-                    </Typography>
-                </Box>
+                <Typography variant="h4" className={styles.homeTeam}>
+                    {homeTeam?.name}
+                </Typography>
             </Grid>
             <Grid item xs={1}>
-                <Box display="flex" sx={{ height: '830px' }}>
-                    <Typography variant="h4" align="center" p={2}>
-                        {awayTeam}
-                    </Typography>
-                </Box>
+                <Typography variant="h4" className={styles.awayTeam}>
+                    {awayTeam?.name}
+                </Typography>
             </Grid>
             <Grid item xs={11}>
                 <Table size="small">

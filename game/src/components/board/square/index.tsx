@@ -3,7 +3,7 @@ import { Avatar, Box, IconButton, TableCell, Tooltip } from '@mui/material';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import DoDisturbOnIcon from '@mui/icons-material/DoDisturbOn';
-import type { Square as TSquare } from '@/types/square';
+import type { Square as TSquare } from '@letsdosquares/core/types';
 
 // import classNames from 'classnames';
 // import styles from './styles.module.scss';

@@ -8,7 +8,7 @@ import {
 } from '@mui/material';
 
 import React from 'react';
-import { SportingEvent as TSportingEvent } from '@/types/sporting-event';
+import { SportingEvent as TSportingEvent } from '@letsdosquares/core/types';
 
 export type WinnerProps = TSportingEvent & unknown;
 

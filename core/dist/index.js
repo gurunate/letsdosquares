@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var index$1 = require('./index-3c70f9c1.js');
+var index$1 = require('./index-2b497890.js');
 require('@faker-js/faker');
 
 var index = /*#__PURE__*/Object.freeze({
