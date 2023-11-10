@@ -7,6 +7,7 @@ import {
     TableRow
 } from '@mui/material';
 
+// import { Card } from '@letsdosquares/ui-kit';
 import React from 'react';
 import { SportingEvent as TSportingEvent } from '@letsdosquares/core/types';
 

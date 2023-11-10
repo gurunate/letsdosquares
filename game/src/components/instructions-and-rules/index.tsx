@@ -1,4 +1,4 @@
-import { Box, Grid, List, ListItem, Paper, Typography } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import { formatCurrency, getTenth } from '@letsdosquares/core/utils';
 
 import Payouts from '@/components/payouts';
@@ -28,15 +28,11 @@ const InstructionsAndRules: React.FC<InstructionsAndRulesProps> = ({
     return (
         <Grid container spacing={2}>
             <Grid item xs={12}>
-                <Typography paragraph variant="h3">
-                    Instructions and Rules
-                </Typography>
+                <Typography variant="h3">Instructions and Rules</Typography>
             </Grid>
 
             <Grid item xs={12}>
-                <Typography paragraph variant="h4">
-                    Pick Your Squares
-                </Typography>
+                <Typography variant="h4">Pick Your Squares</Typography>
                 <ul>
                     <li>
                         <code>{formatCurrency(price)}</code> per square
@@ -47,9 +43,7 @@ const InstructionsAndRules: React.FC<InstructionsAndRulesProps> = ({
                     <li>Board will be locked after the deadline</li>
                     <li>Game numbers will be shown after the deadline</li>
                 </ul>
-                <Typography paragraph variant="h4">
-                    How to Win
-                </Typography>
+                <Typography variant="h4">How to Win</Typography>
                 <Typography paragraph>
                     Game numbers will be randomly generated and revealed after
                     all the squares are picked and the board is locked. They

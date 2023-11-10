@@ -1,4 +1,29 @@
 {
-  "name": "ui-kit",
-  "packageManager": "yarn@4.0.1"
+  "name": "@letsdosquares/ui-kit",
+  "packageManager": "yarn@4.0.1",
+  "license": "UNLICENSED",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "clean": "rimraf ",
+    "dev": "rollup -c -w",
+    "build": "rollup -c",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@mui/base": "^5.0.0-beta.23",
+    "@mui/icons-material": "^5.14.16",
+    "@mui/lab": "^5.0.0-alpha.152",
+    "@mui/system": "^5.14.17",
+    "@mui/x-data-grid": "^6.18.1",
+    "@mui/x-date-pickers": "^6.18.1"
+  },
+  "devDependencies": {
+    "@mui/types": "^7.2.8",
+    "esbuild": "^0.19.5",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.3.0",
+    "rollup-plugin-esbuild": "^6.1.0",
+    "typescript": "^5.2.2"
+  }
 }
