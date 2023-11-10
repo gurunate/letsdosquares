@@ -1,8 +1,9 @@
-import { Grid, Paper, Typography } from '@mui/material';
+import { Box, Grid, List, ListItem, Paper, Typography } from '@mui/material';
+import { formatCurrency, getTenth } from '@letsdosquares/core/utils';
 
+import Payouts from '@/components/payouts';
 import React from 'react';
 import { SportingEvent as TSportingEvent } from '@letsdosquares/core/types';
-import { formatCurrency } from '@letsdosquares/core/utils';
 
 export type InstructionsAndRulesProps = TSportingEvent & {
     limit: number;
@@ -22,7 +23,7 @@ const InstructionsAndRules: React.FC<InstructionsAndRulesProps> = ({
     price
 }: InstructionsAndRulesProps): JSX.Element => {
     const homeTeamScore = 17;
-    const awayTeamScore = 14;
+    const awayTeamScore = 3;
 
     return (
         <Grid container spacing={2} component={Paper}>
@@ -56,27 +57,24 @@ const InstructionsAndRules: React.FC<InstructionsAndRulesProps> = ({
                     number represents the last number in the score of each team.
                 </Typography>
                 <Typography paragraph>
-                    For example, if the 1<sup>st</sup> quarter ending score is{' '}
-                    <strong>{awayTeam.name}</strong>{' '}
-                    <code>{homeTeamScore}</code> and{' '}
-                    <strong>{homeTeam.name}</strong>{' '}
-                    <code>{awayTeamScore}</code>, then the winning square is the
-                    one with a {awayTeam.name} number of{' '}
-                    <code>{awayTeamScore.toString().substring(1)}</code>, and a{' '}
-                    {homeTeam.name} number of{' '}
-                    {homeTeamScore.toString().substring(1)}.
+                    For example, if the 1<sup>st</sup> quarter ending score for{' '}
+                    <em>{awayTeam.name}</em> is <code>{homeTeamScore}</code> and{' '}
+                    <em>{homeTeam.name}</em> is <code>{awayTeamScore}</code>,
+                    then the winning square is the one with a{' '}
+                    <em>{awayTeam.name}</em> number of{' '}
+                    <code>{getTenth(awayTeamScore)}</code>, and a{' '}
+                    <em>{homeTeam.name}</em> number of {getTenth(homeTeamScore)}
+                    .
                 </Typography>
+            </Grid>
+            <Grid item xs={12} p={2}>
                 <Typography paragraph variant="h4">
                     Payouts
                 </Typography>
-            </Grid>
-            <Grid item xs={12}>
                 <Typography paragraph>
                     Price per square: <code>{formatCurrency(price)}</code>
                 </Typography>
-            </Grid>
-            <Grid item xs={12}>
-                {/* <Payouts pot={pot} /> */}
+                <Payouts pot={price * 100} />
             </Grid>
         </Grid>
     );

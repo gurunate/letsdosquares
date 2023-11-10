@@ -54,3 +54,20 @@ export const formatPhone = (value: number | string, pattern?: string) => {
 
     return formatPhoneNumber(pattern || PHONE_FORMAT_PATTERN, value.toString());
 };
+
+/**
+ * Returns the value in the tenth position.
+ *
+ * @param {number | string} value
+ * @param {string} pattern
+ * @returns
+ */
+export const getTenth = (value: number | string, pattern?: string) => {
+    if (!value) {
+        return value;
+    }
+
+    const str = String(value);
+
+    return str.substring(str.length - 1);
+};

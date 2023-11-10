@@ -34,6 +34,13 @@ const formatPhone = (value, pattern) => {
   }
   return phoneFns.format(pattern || PHONE_FORMAT_PATTERN, value.toString());
 };
+const getTenth = (value, pattern) => {
+  if (!value) {
+    return value;
+  }
+  const str = String(value);
+  return str.substring(str.length - 1);
+};
 
 exports.DATE_FORMAT_PATTERN = DATE_FORMAT_PATTERN;
 exports.EXTENDED_CURRENCY_FORMAT_PATTERN = EXTENDED_CURRENCY_FORMAT_PATTERN;
@@ -45,4 +52,5 @@ exports.VALID_ZIP_CODE_PATTERN = VALID_ZIP_CODE_PATTERN;
 exports.formatCurrency = formatCurrency;
 exports.formatNumber = formatNumber;
 exports.formatPhone = formatPhone;
+exports.getTenth = getTenth;
 //# sourceMappingURL=utils.js.map
