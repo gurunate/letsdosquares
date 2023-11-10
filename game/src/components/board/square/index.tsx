@@ -4,9 +4,7 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import DoDisturbOnIcon from '@mui/icons-material/DoDisturbOn';
 import type { Square as TSquare } from '@letsdosquares/core/types';
-
-// import classNames from 'classnames';
-// import styles from './styles.module.scss';
+import styles from '../styles.module.scss';
 
 export type SquareProps = TSquare & {
     disabled?: boolean;
@@ -59,7 +57,7 @@ const Square: React.FC<SquareProps> = ({
     selected = false,
     trace
 }: SquareProps): JSX.Element => (
-    <TableCell align="center">
+    <TableCell align="center" className={styles.square}>
         {picked && (
             <Box
                 display="flex"
