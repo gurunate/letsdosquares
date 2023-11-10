@@ -1060,6 +1060,7 @@ __metadata:
     "@rollup/plugin-json": "npm:^6.0.1"
     "@types/jest": "npm:^29.5.6"
     "@types/node": "npm:^20.8.10"
+    "@types/numeral": "npm:^2.0.5"
     apollo-server-errors: "npm:^3.3.1"
     axios: "npm:^1.6.0"
     cross-fetch: "npm:^4.0.0"
@@ -1671,6 +1672,13 @@ __metadata:
   dependencies:
     undici-types: "npm:~5.26.4"
   checksum: 755d07de735eafda4e20af75ad9d03bdbfddef327d790e9a896142eac7493db5d8501591376e1c8227aa12eeb88e522bc727c6024504842ed40e539e8a466db9
+  languageName: node
+  linkType: hard
+
+"@types/numeral@npm:^2.0.5":
+  version: 2.0.5
+  resolution: "@types/numeral@npm:2.0.5"
+  checksum: b18766cc97e79b5c59130ce1d5d5ad8b9287e1efd5ecac402e8a64e45c50aea8c8940c9974358983036d1abbed365a08f7f4d11b8af16874a5d4d0edce9aa4d4
   languageName: node
   linkType: hard
 

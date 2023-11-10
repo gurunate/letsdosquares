@@ -3,6 +3,7 @@ import * as fixtures from '@letsdosquares/core/fixtures';
 import { Box, Grid, Paper } from '@mui/material';
 
 import Board from '@/components/board';
+import InstructionsAndRules from '@/components/instructions-and-rules';
 import React from 'react';
 import { Square as TSquare } from '@letsdosquares/core/types';
 import Winners from '@/components/winners';
@@ -26,21 +27,15 @@ export default function Page() {
                     limit={LIMIT}
                 />
             </Grid>
-            <Grid item lg={6}>
-                <Winners {...sportingEvent} />
-            </Grid>
             <Grid item lg={4}>
-                <Box m={4}>
-                    <Paper>
-                        InstructionsAndRules
-                        {/* <InstructionsAndRules
+                <InstructionsAndRules
+                    {...sportingEvent}
                     limit={LIMIT}
                     price={PRICE}
-                    teamA={TEAM_A}
-                    teamB={TEAM_B}
-                /> */}
-                    </Paper>
-                </Box>
+                />
+            </Grid>
+            <Grid item lg={6}>
+                <Winners {...sportingEvent} />
             </Grid>
         </Grid>
     );

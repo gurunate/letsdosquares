@@ -1,11 +1,11 @@
 import { Location } from './location';
-import { Opponent } from './opponent';
+import { Team } from './team';
 
 export interface SportingEvent {
     id: string;
     date: Date;
     sport: string;
     location: Location;
-    homeTeam: Opponent;
-    awayTeam: Opponent;
+    homeTeam: Team;
+    awayTeam: Team;
 }

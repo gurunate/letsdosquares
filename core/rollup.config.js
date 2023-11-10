@@ -3,7 +3,7 @@ import json from '@rollup/plugin-json';
 
 const config = [
     {
-        input: ['src/index.ts', 'types.ts', 'fixtures.ts'],
+        input: ['src/index.ts', 'types.ts', 'fixtures.ts', 'utils.ts'],
         plugins: [esbuild(), json()],
         output: [
             {

@@ -21,7 +21,7 @@ const Winner: React.FC<WinnerProps> = ({
     homeTeam,
     awayTeam
 }: WinnerProps): JSX.Element => (
-    <Card>
+    <Card variant="outlined">
         <Table size="small">
             <TableHead>
                 <TableRow>
