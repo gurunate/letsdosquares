@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+      "allowJs": true,
+      "allowSyntheticDefaultImports": true,
+      "baseUrl": "src",
+      "declaration": true,
+      "esModuleInterop": true,
+      "jsx": "react",
+      "lib": ["ES5", "ES2015", "ES2016", "DOM", "ESNext"],
+      "types": ["node", "jest"],
+      "module": "esnext",
+      "moduleResolution": "node",
+      "noImplicitAny": false,
+      "noUnusedLocals": true,
+      "resolveJsonModule": true,
+      "outDir": "dist/esm",
+      "paths": {
+          "@/*": ["./*"]
+      },
+      "sourceMap": true,
+      "strict": true,
+      "target": "ES6"
+  },
+  "ts-node": {
+      "esm": true
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": [
+      "node_modules",
+      "**/*.d.ts",
+      "**/*.stories.ts",
+      "**/*.stories.tsx"
+  ]
+}
