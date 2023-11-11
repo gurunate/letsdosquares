@@ -11,7 +11,17 @@ Super Bowl squares is a common office pool or party game, and it is easy to play
 
 ## Overview
 
-The is a [Yarn Workspaces](https://yarnpkg.com/features/workspaces) mono repository.  
+This is a [Yarn Workspaces](https://yarnpkg.com/features/workspaces) mono repository.
+
+### Workspaces
+
+- [core](./core/README.md)
+- [data-graph](./data-graph/README.md)
+- [design](./design/README.md)
+- [docs](./docs/README.md)
+- [game](./game/README.md)
+- [themes](./themes/README.md)
+- [ui-kit](./ui-kit/README.md)
 
 When deployed, each workspace will produce and publish an artifact.  Some are Docker images and others are NPM packages.  They are intended to work together as a final product.
 
@@ -36,6 +46,13 @@ $ yarn
 ```
 
 ### Run
+
+
+### Develop
+
+```shell
+$ yarn dev
+```
 
 ## References
 
