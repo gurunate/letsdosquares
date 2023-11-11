@@ -1,7 +1,5 @@
 # letsdosquares
 
-## Overview
-
 Super Bowl squares is a common office pool or party game, and it is easy to play. It’s a game of chance and each player draws two “numbers” but it can make the Super Bowl experience more rewarding if your favorite team isn’t playing. Here is how it works:
 
 -   The game starts with a 10-by-10 grid or 100 individual boxes — each of which is assigned a universal price tag, like $1 per square.
@@ -11,7 +9,15 @@ Super Bowl squares is a common office pool or party game, and it is easy to play
 -   Most Super Bowl squares pools give a prize at the end of the first quarter, second quarter, third quarter and the final score. One of the most popular variations on Super Bowl squares is to pay out 25% of the pot at the end of every quarter, rather than all of it at the end of the game. (Or, in some cases, 20% at the end of the first and third quarters, and 30% at the end of each half). This makes it more likely that there will be multiple winners, albeit with smaller shares of the pot.
 -   The values on each axis are usually assigned at random, so you might not have a choice here. But if you do, your best bet will generally be some combination of zeroes and/or sevens. In a 2013 blog post, the Harvard Sports Analysis Collective wrote that the single best square to have is seven on the favorite’s axis (the Rams are the favorites this year) and zero on the underdog’s, with the 0-0 square a close second.
 
+## Overview
+
+The is a [Yarn Workspaces](https://yarnpkg.com/features/workspaces) mono repository.  
+
+When deployed, each workspace will produce and publish an artifact.  Some are Docker images and others are NPM packages.  They are intended to work together as a final product.
+
 ## Getting Started
+
+The default [Node.js version](.node-version) is `v20.9.0`.
 
 ### Prerequisites
 
@@ -35,7 +41,7 @@ $ yarn
 
 ### Related Resources
 
--   TBD
+-   [Node.js](https://nodejs.org/en)
 
 ### External Links
 
