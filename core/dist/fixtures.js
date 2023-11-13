@@ -2,8 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var index = require('./index-aa9bb1a4.js');
+var index = require('./index-b7052d65.js');
 require('@faker-js/faker');
+require('./league-07c94361.js');
 
 
 

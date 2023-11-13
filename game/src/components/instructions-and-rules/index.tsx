@@ -52,8 +52,9 @@ const InstructionsAndRules: React.FC<InstructionsAndRulesProps> = ({
                 </Typography>
                 <Typography paragraph>
                     For example, if the 1<sup>st</sup> quarter ending score for{' '}
-                    <em>{awayTeam.name}</em> is <code>{homeTeamScore}</code> and{' '}
-                    <em>{homeTeam.name}</em> is <code>{awayTeamScore}</code>,
+                    <em>{awayTeam.name}</em> ({awayTeam.abbreviation}) is{' '}
+                    <code>{homeTeamScore}</code> and <em>{homeTeam.name}</em> (
+                    {homeTeam.abbreviation}) is <code>{awayTeamScore}</code>,
                     then the winning square is the one with a{' '}
                     <em>{awayTeam.name}</em> number of{' '}
                     <code>{getTenth(awayTeamScore)}</code>, and a{' '}

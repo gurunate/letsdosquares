@@ -1,10 +1,11 @@
-import { League } from "./league";
+import { League } from './league';
 
 export interface Team {
-  id?: string;
-  name: string;
-  team?: string;
-  sport?: string;
-  logo?: URL;
-  league: League;
+    id?: string;
+    name: string;
+    abbreviation: string;
+    team?: string;
+    sport?: string;
+    logo?: URL;
+    league: League;
 }
