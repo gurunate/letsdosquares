@@ -47,12 +47,15 @@ const Board: React.FC<BoardProps> = ({
 }: BoardProps): JSX.Element => {
     const [selected, setSelected] = React.useState<Record<string, boolean>>({});
 
-    const handlePick = ({ column, row }: TSquare) => {
-        setSelected({
-            ...selected,
-            [`${column},${row}`]: !selected[`${column},${row}`]
-        });
-    };
+    const handlePick = React.useCallback(
+        ({ column, row }: TSquare) => {
+            setSelected({
+                ...selected,
+                [`${column},${row}`]: !selected[`${column},${row}`]
+            });
+        },
+        [selected]
+    );
 
     return (
         <Grid container>
