@@ -12,6 +12,8 @@
     "@emotion/cache": "^11.11.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@fontsource-variable/open-sans": "^5.0.18",
+    "@fontsource/fira-sans": "^5.0.17",
     "@letsdosquares/core": "workspace:^",
     "@letsdosquares/ui-kit": "workspace:^",
     "@mui/icons-material": "^5.14.16",

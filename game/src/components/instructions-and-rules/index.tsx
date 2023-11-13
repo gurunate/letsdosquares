@@ -23,7 +23,7 @@ const InstructionsAndRules: React.FC<InstructionsAndRulesProps> = ({
     price
 }: InstructionsAndRulesProps): JSX.Element => {
     const homeTeamScore = 17;
-    const awayTeamScore = 3;
+    const awayTeamScore = 23;
 
     return (
         <Grid container spacing={2}>
@@ -57,8 +57,8 @@ const InstructionsAndRules: React.FC<InstructionsAndRulesProps> = ({
                     {homeTeam.abbreviation}) is <code>{awayTeamScore}</code>,
                     then the winning square is the one with a{' '}
                     <em>{awayTeam.name}</em> number of{' '}
-                    <code>{getTenth(awayTeamScore)}</code>, and a{' '}
-                    <em>{homeTeam.name}</em> number of {getTenth(homeTeamScore)}
+                    <code>{getTenth(homeTeamScore)}</code>, and a{' '}
+                    <em>{homeTeam.name}</em> number of {getTenth(awayTeamScore)}
                     .
                 </Typography>
                 <Typography paragraph variant="h4">

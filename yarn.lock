@@ -865,6 +865,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource-variable/open-sans@npm:^5.0.18":
+  version: 5.0.18
+  resolution: "@fontsource-variable/open-sans@npm:5.0.18"
+  checksum: ec5e33654d5abfed6d7788bd404f91bab749f69ede1730ab0b958265e1dcc82b77972d0f8e98d477e2f41d3334c73c86a8e7bd90107295b4c44bb17607977b78
+  languageName: node
+  linkType: hard
+
+"@fontsource/fira-sans@npm:^5.0.17":
+  version: 5.0.17
+  resolution: "@fontsource/fira-sans@npm:5.0.17"
+  checksum: 659397270fbcdc9f62556fa19eeb6e9a7c601c1179967e0e62c1a65b09a54b4656c43e41ff6b78d3f62212b404686a2aa0bef83e55c1004e880f9e0db44d5a91
+  languageName: node
+  linkType: hard
+
 "@graphql-typed-document-node/core@npm:^3.1.1":
   version: 3.2.0
   resolution: "@graphql-typed-document-node/core@npm:3.2.0"
@@ -1246,6 +1260,8 @@ __metadata:
     "@emotion/cache": "npm:^11.11.0"
     "@emotion/react": "npm:^11.11.1"
     "@emotion/styled": "npm:^11.11.0"
+    "@fontsource-variable/open-sans": "npm:^5.0.18"
+    "@fontsource/fira-sans": "npm:^5.0.17"
     "@letsdosquares/core": "workspace:^"
     "@letsdosquares/ui-kit": "workspace:^"
     "@mui/icons-material": "npm:^5.14.16"

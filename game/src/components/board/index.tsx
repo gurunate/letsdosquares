@@ -1,7 +1,6 @@
 'use client';
 
 import {
-    Box,
     Grid,
     Table,
     TableBody,
@@ -22,6 +21,7 @@ import styles from './styles.module.scss';
 
 export type BoardProps = TSportingEvent & {
     limit?: number;
+    onPick?: (square: TSquare) => void;
 };
 
 const WIDTH = 10;
@@ -41,32 +41,43 @@ const picked: Record<string, string> = {
  * @returns {JSX.Element}
  */
 const Board: React.FC<BoardProps> = ({
-    limit = 5,
+    awayTeam,
     homeTeam,
-    awayTeam
+    limit = 5,
+    onPick = () => null
 }: BoardProps): JSX.Element => {
     const [selected, setSelected] = React.useState<Record<string, boolean>>({});
 
     const handlePick = React.useCallback(
-        ({ column, row }: TSquare) => {
+        (square: TSquare) => {
             setSelected({
                 ...selected,
-                [`${column},${row}`]: !selected[`${column},${row}`]
+                [`${square.column},${square.row}`]:
+                    !selected[`${square.column},${square.row}`]
             });
+            onPick(square);
         },
-        [selected]
+        [onPick, selected]
     );
 
     return (
         <Grid container>
             <Grid item xs={1} />
             <Grid item xs={11}>
-                <Typography variant="h4" className={styles.homeTeam}>
+                <Typography
+                    variant="h2"
+                    component="div"
+                    className={styles.homeTeam}
+                >
                     {homeTeam?.name}
                 </Typography>
             </Grid>
             <Grid item xs={1}>
-                <Typography variant="h4" className={styles.awayTeam}>
+                <Typography
+                    variant="h2"
+                    component="div"
+                    className={styles.awayTeam}
+                >
                     {awayTeam?.name}
                 </Typography>
             </Grid>
