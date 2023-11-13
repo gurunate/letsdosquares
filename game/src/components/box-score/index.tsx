@@ -8,9 +8,10 @@ import {
 } from '@mui/material';
 
 import React from 'react';
+import { SportingEvent as TSportingEvent } from '@letsdosquares/core/types';
 import { formatNumber } from '@letsdosquares/core/utils';
 
-export type BoxScoreProps = {
+export type BoxScoreProps = TSportingEvent & {
     loading?: boolean;
 };
 
@@ -19,9 +20,10 @@ export type BoxScoreProps = {
  * @param {BoxScoreProps} props
  * @returns {JSX.Element}
  */
-const BoxScore: React.FC<BoxScoreProps> = (
-    props: BoxScoreProps
-): JSX.Element => (
+const BoxScore: React.FC<BoxScoreProps> = ({
+    awayTeam,
+    homeTeam
+}: BoxScoreProps): JSX.Element => (
     <Card variant="outlined">
         <Table size="small">
             <TableHead>
@@ -40,7 +42,7 @@ const BoxScore: React.FC<BoxScoreProps> = (
             </TableHead>
             <TableBody>
                 <TableRow>
-                    <TableCell>CAR</TableCell>
+                    <TableCell>{awayTeam.abbreviation}</TableCell>
                     <TableCell align="center">
                         <code>7</code>
                     </TableCell>
@@ -55,7 +57,7 @@ const BoxScore: React.FC<BoxScoreProps> = (
                     </TableCell>
                 </TableRow>
                 <TableRow>
-                    <TableCell>CHI</TableCell>
+                    <TableCell>{homeTeam.abbreviation}</TableCell>
                     <TableCell align="center">
                         <code>3</code>
                     </TableCell>

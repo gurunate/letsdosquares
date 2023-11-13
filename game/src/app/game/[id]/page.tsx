@@ -33,7 +33,7 @@ export default function Page() {
                     <Winners {...sportingEvent} />
                 </Grid>
                 <Grid item md={4}>
-                    <BoxScore />
+                    <BoxScore {...sportingEvent} />
                 </Grid>
             </Grid>
             <Grid item lg={4}>
