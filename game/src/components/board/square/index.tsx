@@ -3,6 +3,7 @@ import { Avatar, Box, IconButton, TableCell, Tooltip } from '@mui/material';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import DoDisturbOnIcon from '@mui/icons-material/DoDisturbOn';
+import React from 'react';
 import type { Square as TSquare } from '@letsdosquares/core/types';
 import styles from '../styles.module.scss';
 
@@ -89,4 +90,4 @@ const Square: React.FC<SquareProps> = ({
     </TableCell>
 );
 
-export default Square;
+export default React.memo(Square);

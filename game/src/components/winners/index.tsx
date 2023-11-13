@@ -36,7 +36,7 @@ const Winner: React.FC<WinnerProps> = ({
             <TableBody>
                 <TableRow>
                     <TableCell align="right" variant="head">
-                        1<sup>st</sup> QTR
+                        Q1
                     </TableCell>
                     <TableCell align="center">
                         <code>7</code>
@@ -51,7 +51,7 @@ const Winner: React.FC<WinnerProps> = ({
                 </TableRow>
                 <TableRow>
                     <TableCell align="right" variant="head">
-                        2<sup>nd</sup> QTR
+                        Q2
                     </TableCell>
                     <TableCell align="center">
                         <code>21</code>
@@ -66,7 +66,7 @@ const Winner: React.FC<WinnerProps> = ({
                 </TableRow>
                 <TableRow>
                     <TableCell align="right" variant="head">
-                        3<sup>rd</sup> QTR
+                        Q3
                     </TableCell>
                     <TableCell align="center">
                         <code>31</code>
@@ -81,7 +81,7 @@ const Winner: React.FC<WinnerProps> = ({
                 </TableRow>
                 <TableRow>
                     <TableCell align="right" variant="head">
-                        4<sup>th</sup> QTR
+                        Q4
                     </TableCell>
                     <TableCell align="center">
                         <code>31</code>

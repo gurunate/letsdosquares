@@ -1,9 +1,17 @@
-import React from "react";
-import { Card } from "@mui/material";
-import { formatNumber } from "@letsdosquares/core";
+import {
+    Card,
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableRow
+} from '@mui/material';
+
+import React from 'react';
+import { formatNumber } from '@letsdosquares/core/utils';
 
 export type BoxScoreProps = {
-  loading?: boolean;
+    loading?: boolean;
 };
 
 /**
@@ -12,54 +20,58 @@ export type BoxScoreProps = {
  * @returns {JSX.Element}
  */
 const BoxScore: React.FC<BoxScoreProps> = (
-  props: BoxScoreProps
+    props: BoxScoreProps
 ): JSX.Element => (
-  <Card>
-    <Table size="small">
-      <TableHead>
-        <TableRow>
-          <TableCell />
-          {Array.from(Array(4)).map((_, idx) => (
-            <TableCell key={idx} align="center">
-              formatNumber(idx + 1, 'Oo')
-            </TableCell>
-          ))}
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        <TableRow>
-          <TableCell>CAR</TableCell>
-          <TableCell>
-            <code>7</code>
-          </TableCell>
-          <TableCell>
-            <code>10</code>
-          </TableCell>
-          <TableCell>
-            <code>10</code>
-          </TableCell>
-          <TableCell>
-            <code>13</code>
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell>CHI</TableCell>
-          <TableCell>
-            <code>3</code>
-          </TableCell>
-          <TableCell>
-            <code>9</code>
-          </TableCell>
-          <TableCell>
-            <code>16</code>
-          </TableCell>
-          <TableCell>
-            <code>16</code>
-          </TableCell>
-        </TableRow>
-      </TableBody>
-    </Table>
-  </Card>
+    <Card variant="outlined">
+        <Table size="small">
+            <TableHead>
+                <TableRow>
+                    <TableCell />
+                    {Array.from(Array(4)).map((_, idx) => (
+                        <TableCell
+                            key={idx}
+                            align="center"
+                            sx={{ textTransform: 'uppercase' }}
+                        >
+                            {formatNumber(idx + 1, 'Oo')}
+                        </TableCell>
+                    ))}
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                <TableRow>
+                    <TableCell>CAR</TableCell>
+                    <TableCell align="center">
+                        <code>7</code>
+                    </TableCell>
+                    <TableCell align="center">
+                        <code>10</code>
+                    </TableCell>
+                    <TableCell align="center">
+                        <code>10</code>
+                    </TableCell>
+                    <TableCell align="center">
+                        <code>13</code>
+                    </TableCell>
+                </TableRow>
+                <TableRow>
+                    <TableCell>CHI</TableCell>
+                    <TableCell align="center">
+                        <code>3</code>
+                    </TableCell>
+                    <TableCell align="center">
+                        <code>9</code>
+                    </TableCell>
+                    <TableCell align="center">
+                        <code>16</code>
+                    </TableCell>
+                    <TableCell align="center">
+                        <code>16</code>
+                    </TableCell>
+                </TableRow>
+            </TableBody>
+        </Table>
+    </Card>
 );
 
 export default BoxScore;
