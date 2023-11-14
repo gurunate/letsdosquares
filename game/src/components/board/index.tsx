@@ -50,14 +50,14 @@ const Board: React.FC<BoardProps> = ({
 
     const handlePick = React.useCallback(
         (square: TSquare) => {
-            setSelected({
-                ...selected,
+            setSelected(prev => ({
+                ...prev,
                 [`${square.column},${square.row}`]:
-                    !selected[`${square.column},${square.row}`]
-            });
+                    !prev[`${square.column},${square.row}`]
+            }));
             onPick(square);
         },
-        [onPick, selected]
+        [onPick]
     );
 
     return (
