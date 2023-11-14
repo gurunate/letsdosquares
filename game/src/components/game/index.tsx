@@ -28,7 +28,7 @@ const Game: React.FC<GameProps> = ({
     ...sportingEvent
 }: GameProps): JSX.Element => {
     const handlePick = React.useCallback((square: TSquare) => {
-        console.log({ square });
+        console.log('handlePick', { square });
     }, []);
 
     return (
