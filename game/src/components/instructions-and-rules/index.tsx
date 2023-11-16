@@ -1,6 +1,15 @@
-import { Collapse, Grid, Typography } from '@mui/material';
+import {
+    Collapse,
+    Grid,
+    IconButton,
+    Stack,
+    Tooltip,
+    Typography
+} from '@mui/material';
 import { formatCurrency, getTenth } from '@letsdosquares/core/utils';
 
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import Payouts from '@/components/payouts';
 import React from 'react';
 import { SportingEvent as TSportingEvent } from '@letsdosquares/core/types';
@@ -20,7 +29,7 @@ export type InstructionsAndRulesProps = TSportingEvent & {
  */
 const InstructionsAndRules: React.FC<InstructionsAndRulesProps> = ({
     awayTeam,
-    collapse = false,
+    // collapse = false,
     homeTeam,
     limit,
     loading = false,
@@ -29,10 +38,33 @@ const InstructionsAndRules: React.FC<InstructionsAndRulesProps> = ({
     const homeTeamScore = 17;
     const awayTeamScore = 23;
 
+    const [collapse, setCollapse] = React.useState(false);
+
+    const toggleCollapse = () => {
+        setCollapse(prev => {
+            const current = !prev;
+            // onToggleCollapse && onToggleCollapse(current);
+            return current;
+        });
+    };
+
     return (
         <Grid container spacing={2}>
             <Grid item xs={12}>
-                <Typography variant="h3">Instructions and Rules</Typography>
+                <Stack
+                    direction="row"
+                    alignItems="center"
+                    onClick={toggleCollapse}
+                    sx={{ cursor: 'pointer' }}
+                >
+                    <Tooltip title={collapse ? 'expand' : 'collapse'}>
+                        <IconButton>
+                            {!collapse && <ArrowDropDownIcon />}
+                            {collapse && <ArrowRightIcon />}
+                        </IconButton>
+                    </Tooltip>
+                    <Typography variant="h3">Instructions and Rules</Typography>
+                </Stack>
             </Grid>
 
             <Grid item xs={12}>
