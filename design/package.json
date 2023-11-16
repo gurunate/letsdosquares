@@ -2,8 +2,10 @@
   "name": "@letsdosquares/design",
   "packageManager": "yarn@4.0.1",
   "devDependencies": {
+    "@babel/core": "^7.23.3",
     "@babel/preset-env": "^7.23.3",
     "@babel/preset-react": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
     "@storybook/addon-essentials": "^7.5.3",
     "@storybook/addon-interactions": "^7.5.3",
     "@storybook/addon-links": "^7.5.3",
@@ -20,7 +22,8 @@
     "storybook": "^7.5.3"
   },
   "scripts": {
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "start": "storybook dev -p 6006",
+    "debug": "storybook dev -p 6006 --debug-webpack",
+    "build": "storybook build"
   }
 }
