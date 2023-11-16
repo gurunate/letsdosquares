@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import Component from '.';
-import { League } from '@letsdosquares/core/types';
+import { fixtures } from '@letsdosquares/core';
 
 const meta = {
     title: 'Game / components / Instructions And Rules',
@@ -11,21 +11,14 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const sportingEvent = fixtures.sportingEvent();
+
 export const InstructionsAndRules: Story = {
     args: {
         loading: false,
-        collapse: false,
+        collapsed: false,
         limit: 10,
         price: 5,
-        homeTeam: {
-            name: 'Kansas City',
-            abbreviation: 'KC',
-            league: League.NFL
-        },
-        awayTeam: {
-            name: 'Tampa Bay',
-            abbreviation: 'TB',
-            league: League.NFL
-        }
+        ...sportingEvent
     }
 };

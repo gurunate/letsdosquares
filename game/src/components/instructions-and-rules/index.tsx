@@ -15,7 +15,7 @@ import React from 'react';
 import { SportingEvent as TSportingEvent } from '@letsdosquares/core/types';
 
 export type InstructionsAndRulesProps = TSportingEvent & {
-    collapse?: boolean;
+    collapsed?: boolean;
     limit: number;
     loading?: boolean;
     price: number;
@@ -29,7 +29,7 @@ export type InstructionsAndRulesProps = TSportingEvent & {
  */
 const InstructionsAndRules: React.FC<InstructionsAndRulesProps> = ({
     awayTeam,
-    // collapse = false,
+    collapsed = false,
     homeTeam,
     limit,
     loading = false,
@@ -41,12 +41,12 @@ const InstructionsAndRules: React.FC<InstructionsAndRulesProps> = ({
     const [collapse, setCollapse] = React.useState(false);
 
     const toggleCollapse = () => {
-        setCollapse(prev => {
-            const current = !prev;
-            // onToggleCollapse && onToggleCollapse(current);
-            return current;
-        });
+        setCollapse(prev => !prev);
     };
+
+    React.useEffect(() => {
+        setCollapse(collapsed);
+    }, [collapsed]);
 
     return (
         <Grid container spacing={2}>
