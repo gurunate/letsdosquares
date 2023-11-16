@@ -1,6 +1,6 @@
 export { location } from './location';
 export { sportingEvent } from './sporting-event';
-export { team as opponent } from './team';
+export { team } from './team';
 
 /**
  * Returns a randomized entry from the provided list.
@@ -8,5 +8,5 @@ export { team as opponent } from './team';
  * @param {string | any[]} list
  * @returns {unknown}
  */
-export const randomized = (list: string | any[]): unknown =>
+export const randomValueFromList = (list: string | any[]): unknown =>
     list[Math.floor(Math.random() * (list.length - 0))];
