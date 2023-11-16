@@ -18,7 +18,7 @@ export const EXTENDED_CURRENCY_FORMAT_PATTERN = '$1,1.11';
  * @returns {string}
  */
 export const formatCurrency = (value?: number | string, pattern?: string) => {
-    if (!value) {
+    if (value !== 0 && !value) {
         return value;
     }
 
@@ -32,7 +32,10 @@ export const formatCurrency = (value?: number | string, pattern?: string) => {
  * @param {string} pattern
  * @returns {string}
  */
-export const formatNumber = (value: number | string, pattern?: string) => {
+export const formatNumber = (
+    value: number | string,
+    pattern?: string
+): number | string => {
     if (!value) {
         return value;
     }

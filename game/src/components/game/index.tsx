@@ -11,6 +11,7 @@ import { Grid } from '@mui/material';
 import InstructionsAndRules from '@/components/instructions-and-rules';
 import React from 'react';
 import Winners from '@/components/winners';
+import YourPicks from '../your-picks';
 
 export type GameProps = TSportingEvent & {
     limit?: number;
@@ -48,12 +49,17 @@ const Game: React.FC<GameProps> = ({
                     <Winners {...sportingEvent} />
                 </Grid>
             </Grid>
-            <Grid item lg={4}>
-                <InstructionsAndRules
-                    {...sportingEvent}
-                    limit={limit}
-                    price={price}
-                />
+            <Grid container direction="column" spacing={4} item lg={4}>
+                <Grid item>
+                    <YourPicks picks={0} limit={limit} price={price} />
+                </Grid>
+                <Grid item>
+                    <InstructionsAndRules
+                        {...sportingEvent}
+                        limit={limit}
+                        price={price}
+                    />
+                </Grid>
             </Grid>
         </Grid>
     );

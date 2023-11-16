@@ -1,9 +1,13 @@
-import { Card, CardContent, CardHeader } from '@mui/material';
+import { Card, CardContent, CardHeader, Grid, Typography } from '@mui/material';
 
 import React from 'react';
+import { formatCurrency } from '@letsdosquares/core/utils';
 
 export type YourPicksProps = {
     loading?: boolean;
+    picks: number;
+    limit?: number;
+    price: number;
 };
 
 /**
@@ -11,13 +15,42 @@ export type YourPicksProps = {
  * @param {YourPicksProps} props
  * @returns {JSX.Element}
  */
-const YourPicks: React.FC<YourPicksProps> = (
-    props: YourPicksProps
-): JSX.Element => (
-    <Card>
-        <CardHeader title="Your Picks" />
-        <CardContent>YourPicks</CardContent>
-    </Card>
-);
+const YourPicks: React.FC<YourPicksProps> = ({
+    picks = 0,
+    limit = 10,
+    price = 1
+}: YourPicksProps): JSX.Element => {
+    const remaining = limit - picks;
+    const owed = picks * price || 0;
+
+    return (
+        <Card variant="outlined">
+            <CardContent>
+                <Grid container spacing={2}>
+                    <Grid item xs={8}>
+                        <Typography variant="h4">Number of Picks</Typography>
+                    </Grid>
+                    <Grid item xs={4} textAlign="right">
+                        <code>{picks}</code>
+                    </Grid>
+                    <Grid item xs={8}>
+                        <Typography variant="h4">Remaining Picks</Typography>
+                    </Grid>
+                    <Grid item xs={4} textAlign="right">
+                        <code>
+                            {remaining} of {limit}
+                        </code>
+                    </Grid>
+                    <Grid item xs={8}>
+                        <Typography variant="h4">Amount Owe</Typography>
+                    </Grid>
+                    <Grid item xs={4} textAlign="right">
+                        <code>{formatCurrency(owed)}</code>
+                    </Grid>
+                </Grid>
+            </CardContent>
+        </Card>
+    );
+};
 
 export default YourPicks;

@@ -1,11 +1,20 @@
-import type { StorybookConfig } from '@storybook/react-webpack5';
+import path from 'path';
 
-const config: StorybookConfig = {
+const config = {
+    framework: '@storybook/react-webpack5',
     stories: [
         '../stories/**/*.mdx',
         '../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)',
-        '../../game/**/*.stories.@(ts|tsx)'
+        '../../game/src/**/*.stories.@(ts|tsx)'
     ],
+    async webpackFinal(config) {
+        config.resolve.alias = {
+            ...config.resolve.alias,
+            '@': path.resolve(__dirname, '../../game/src')
+        };
+
+        return config;
+    },
     addons: [
         '@storybook/addon-links',
         '@storybook/addon-essentials',
@@ -13,10 +22,6 @@ const config: StorybookConfig = {
         '@storybook/addon-interactions',
         '@storybook/addon-themes'
     ],
-    framework: {
-        name: '@storybook/react-webpack5',
-        options: {}
-    },
     docs: {
         autodocs: 'tag'
     },
