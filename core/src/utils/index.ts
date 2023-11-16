@@ -16,9 +16,12 @@ export const EXTENDED_CURRENCY_FORMAT_PATTERN = '$1,1.11';
  *
  * @param {number | string} value
  * @param {string} pattern
- * @returns {string}
+ * @returns {number | string | undefined}
  */
-export const formatCurrency = (value?: number | string, pattern?: string) => {
+export const formatCurrency = (
+    value?: number | string,
+    pattern?: string
+): number | string | undefined => {
     if (value !== 0 && !value) {
         return value;
     }
@@ -31,12 +34,12 @@ export const formatCurrency = (value?: number | string, pattern?: string) => {
  *
  * @param {number | string} value
  * @param {string} pattern
- * @returns {string}
+ * @returns {number | string | undefined}
  */
 export const formatNumber = (
-    value: number | string,
+    value?: number | string,
     pattern?: string
-): number | string => {
+): number | string | undefined => {
     if (!value) {
         return value;
     }
@@ -49,9 +52,12 @@ export const formatNumber = (
  *
  * @param {number | string} value
  * @param {string} pattern
- * @returns
+ * @returns {number | string | undefined}
  */
-export const formatPhone = (value: number | string, pattern?: string) => {
+export const formatPhone = (
+    value?: number | string,
+    pattern?: string
+): number | string | undefined => {
     if (!value) {
         return value;
     }
@@ -60,20 +66,19 @@ export const formatPhone = (value: number | string, pattern?: string) => {
 };
 
 /**
- * Returns the value in the tenth position.
+ * Returns the value in the ones position.
  *
  * @param {number | string} value
- * @param {string} pattern
- * @returns
+ * @returns {number | string | undefined}
  */
-export const getTenth = (value: number | string, pattern?: string) => {
+export const getLastDigit = (
+    value?: number | string
+): number | string | undefined => {
     if (!value) {
         return value;
     }
 
-    const str = String(value);
-
-    return str.substring(str.length - 1);
+    return parseInt(String(value).slice(-1), 10);
 };
 
 /**
@@ -81,9 +86,12 @@ export const getTenth = (value: number | string, pattern?: string) => {
  *
  * @param {string} value
  * @param {string} pattern
- * @returns {string}
+ * @returns {number | string | undefined}
  */
-export const formatDate = (value: string = '', pattern?: string): string => {
+export const formatDate = (
+    value?: string,
+    pattern?: string
+): number | string | undefined => {
     if (!value || isNaN(Date.parse(value))) {
         return value;
     }

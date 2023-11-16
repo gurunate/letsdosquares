@@ -8,7 +8,9 @@
     "clean": "rimraf dist",
     "dev": "rollup -c -w",
     "build": "rollup -c",
-    "test": "jest"
+    "test": "jest",
+    "watch": "jest --watch",
+    "coverage": "jest --coverage"
   },
   "dependencies": {
     "@apollo/client": "^3.8.6",

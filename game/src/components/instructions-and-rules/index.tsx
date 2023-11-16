@@ -6,7 +6,7 @@ import {
     Tooltip,
     Typography
 } from '@mui/material';
-import { formatCurrency, getTenth } from '@letsdosquares/core/utils';
+import { formatCurrency, getLastDigit } from '@letsdosquares/core/utils';
 
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
@@ -95,9 +95,9 @@ const InstructionsAndRules: React.FC<InstructionsAndRulesProps> = ({
                         <em>{homeTeam.name}</em> ({homeTeam.abbreviation}) is{' '}
                         <code>{awayTeamScore}</code>, then the winning square is
                         the one with a <em>{awayTeam.name}</em> number of{' '}
-                        <code>{getTenth(homeTeamScore)}</code>, and a{' '}
+                        <code>{getLastDigit(homeTeamScore)}</code>, and a{' '}
                         <em>{homeTeam.name}</em> number of{' '}
-                        {getTenth(awayTeamScore)}.
+                        {getLastDigit(awayTeamScore)}.
                     </Typography>
                     <Typography paragraph variant="h4">
                         Payouts
