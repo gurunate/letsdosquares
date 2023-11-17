@@ -21,7 +21,7 @@ import styles from './styles.module.scss';
 
 export type BoardProps = TSportingEvent & {
     limit?: number;
-    onPick?: (square: TSquare) => void;
+    onSelect?: (square: TSquare) => void;
 };
 
 const WIDTH = 10;
@@ -44,7 +44,7 @@ const Board: React.FC<BoardProps> = ({
     awayTeam,
     homeTeam,
     limit = 5,
-    onPick = () => null
+    onSelect = () => null
 }: BoardProps): JSX.Element => {
     const [selected, setSelected] = React.useState<Record<string, boolean>>({});
 
@@ -55,9 +55,9 @@ const Board: React.FC<BoardProps> = ({
                 [`${square.column},${square.row}`]:
                     !prev[`${square.column},${square.row}`]
             }));
-            onPick(square);
+            onSelect(square);
         },
-        [onPick]
+        [onSelect]
     );
 
     return (

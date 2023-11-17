@@ -21,7 +21,7 @@ const YourPicks: React.FC<YourPicksProps> = ({
     price = 1
 }: YourPicksProps): JSX.Element => {
     const remaining = limit - picks;
-    const owed = picks * price || 0;
+    const due = picks * price || 0;
 
     return (
         <Card variant="outlined">
@@ -42,10 +42,10 @@ const YourPicks: React.FC<YourPicksProps> = ({
                         </code>
                     </Grid>
                     <Grid item xs={8}>
-                        <Typography variant="h4">Amount Owe</Typography>
+                        <Typography variant="h4">Amount Due</Typography>
                     </Grid>
                     <Grid item xs={4} textAlign="right">
-                        <code>{formatCurrency(owed)}</code>
+                        <code>{formatCurrency(due)}</code>
                     </Grid>
                 </Grid>
             </CardContent>

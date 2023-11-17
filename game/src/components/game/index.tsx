@@ -38,7 +38,7 @@ const Game: React.FC<GameProps> = ({
                 <Grid item md={12}>
                     <Board
                         {...sportingEvent}
-                        onPick={handlePick}
+                        onSelect={handlePick}
                         limit={limit}
                     />
                 </Grid>
