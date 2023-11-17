@@ -6,7 +6,8 @@ import {
     Container,
     IconButton,
     Stack,
-    Toolbar
+    Toolbar,
+    Typography
 } from '@mui/material';
 
 import { Inter } from 'next/font/google';
@@ -56,6 +57,12 @@ export default function RootLayout({
                             <main>{children}</main>
                         </Box>
                     </Container>
+                    <Box p={2} textAlign="center" component="footer">
+                        <Typography variant="caption" textAlign="center">
+                            Copyright &copy; {new Date().getFullYear()}. All
+                            rights reserved.
+                        </Typography>
+                    </Box>
                 </ThemeRegistry>
             </body>
         </html>

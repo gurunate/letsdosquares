@@ -3,9 +3,9 @@
   "packageManager": "yarn@4.0.1",
   "license": "UNLICENSED",
   "type": "module",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "scripts": {
-    "clean": "rimraf ",
+    "clean": "rimraf dist",
     "dev": "rollup -c -w",
     "build": "rollup -c",
     "test": "jest"
@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@mui/types": "^7.2.8",
+    "@rollup/plugin-typescript": "^11.1.5",
     "esbuild": "^0.19.5",
     "rimraf": "^5.0.5",
     "rollup": "^4.3.0",

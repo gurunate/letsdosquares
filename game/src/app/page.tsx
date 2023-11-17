@@ -2,7 +2,7 @@ import { List, ListItem, Typography } from '@mui/material';
 
 import Link from '@/components/link';
 
-export default function Home() {
+const Page = () => {
     const id = 456;
 
     return (
@@ -15,4 +15,6 @@ export default function Home() {
             </List>
         </>
     );
-}
+};
+
+export default Page;

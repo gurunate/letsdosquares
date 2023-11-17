@@ -1,5 +1,6 @@
 import esbuild from 'rollup-plugin-esbuild';
 import json from '@rollup/plugin-json';
+import typescript from '@rollup/plugin-typescript';
 
 const config = [
     {
@@ -12,6 +13,17 @@ const config = [
                 exports: 'named',
                 sourcemap: true,
                 preserveModules: false // Keep directory structure and files
+            }
+        ]
+    },
+    {
+        input: ['src/index.ts'],
+        plugins: [typescript()],
+        output: [
+            {
+                dir: 'dist',
+                format: 'es',
+                sourcemap: true
             }
         ]
     }
